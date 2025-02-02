@@ -41,7 +41,7 @@ st.markdown("<h1 style='text-align: center; color: #4CAF50;'>Chatbot Pembuatan P
 st.markdown("<h3 style='text-align: center; color: #2c3e50;'>Dengan Metode Takakura</h3>", unsafe_allow_html=True)
 
 # Menambahkan gambar terkait dengan pupuk kompos organik
-st.image("https://www.example.com/images/compost.jpg", caption="Pembuatan Pupuk Kompos Organik", use_column_width=True)
+st.image("https://www.example.com/images/compost.jpg", caption="Pembuatan Pupuk Kompos Organik", use_container_width=True)
 
 # Input pengguna
 st.markdown("<h4 style='color: #34495e;'>Tanyakan sesuatu tentang pembuatan pupuk kompos organik dengan metode Takakura:</h4>", unsafe_allow_html=True)
