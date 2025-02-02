@@ -15,22 +15,22 @@ def google_search(query):
     results = search.get_dict()
     
     try:
-        # Ambil cuplikan pertama yang relevan dan pastikan jawabannya singkat
+        # Fokus pada pupuk kompos organik dan metode Takakura
         for res in results["organic_results"][:3]:
             snippet = res.get("snippet", "")
-            if "pupuk kompos" in snippet.lower():  # Memastikan relevansi
-                return snippet.split('.')[0] + '.'  # Mengambil kalimat pertama
+            if "pupuk kompos organik" in snippet.lower() and "takakura" in snippet.lower():
+                return snippet.split('.')[0] + '.'  # Ambil kalimat pertama yang relevan
         
-        return "Maaf, saya tidak dapat menemukan informasi yang relevan."
+        return "Maaf, saya tidak dapat menemukan informasi yang relevan tentang pupuk kompos organik dan metode Takakura."
 
     except KeyError:
         return "Maaf, saya tidak bisa mencari saat ini."
 
 # Header aplikasi
-st.title("Chatbot Pupuk Kompos Organik")
+st.title("Chatbot Pupuk Kompos Organik dan Metode Takakura")
 
 # Input pengguna
-user_input = st.text_input("Tanyakan sesuatu tentang pupuk kompos:")
+user_input = st.text_input("Tanyakan sesuatu tentang pupuk kompos organik atau metode Takakura:")
 
 if user_input:
     st.write("🔄 Sedang memproses...")
