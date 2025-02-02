@@ -22,12 +22,12 @@ def google_search(query):
             if "pupuk kompos organik" in snippet.lower() and "metode takakura" in snippet.lower():
                 return snippet.split('.')[0] + '.'  # Ambil kalimat pertama yang relevan
         
-        # Jika tidak ada hasil, beri penjelasan singkat yang beragam
+        # Jika tidak ada hasil, beri penjelasan lengkap dan terstruktur
         responses = [
-            "Metode Takakura adalah teknik pembuatan pupuk kompos organik yang melibatkan fermentasi bahan-bahan organik seperti sisa makanan dan daun dalam wadah tertutup.",
-            "Pada metode Takakura, proses fermentasi dilakukan dalam wadah tertutup untuk mengubah bahan-bahan organik seperti daun dan kotoran hewan menjadi pupuk yang kaya mikroorganisme.",
-            "Pembuatan pupuk kompos dengan metode Takakura menggunakan bahan organik seperti sisa makanan, kotoran hewan, dan daun, yang difermentasi dalam wadah tertutup untuk menghasilkan pupuk berkualitas.",
-            "Metode Takakura mengandalkan fermentasi bahan organik seperti sisa sayuran dan limbah rumah tangga dalam wadah tertutup untuk menciptakan pupuk kompos yang bermanfaat untuk pertanian."
+            "Pupuk kompos organik adalah pupuk yang terbuat dari bahan organik yang telah melalui proses dekomposisi alami. Contohnya adalah daun, sisa makanan, dan kotoran hewan. Metode Takakura adalah salah satu metode pembuatan pupuk kompos dengan cara fermentasi dalam wadah tertutup. Proses ini mempercepat penguraian bahan organik menjadi kompos yang kaya akan mikroorganisme yang bermanfaat.",
+            "Pupuk kompos organik berasal dari bahan-bahan organik yang telah difermentasi menjadi pupuk yang berguna bagi tanah. Metode Takakura adalah cara pembuatan pupuk kompos dengan memanfaatkan bahan organik seperti sampah rumah tangga dan kotoran hewan yang difermentasi dalam wadah tertutup. Kelebihan metode ini adalah pengolahan sampah rumah tangga menjadi pupuk yang berguna, namun membutuhkan perhatian pada kelembaban dan aerasi.",
+            "Pupuk kompos organik terdiri dari bahan-bahan alami yang telah terdekomposisi menjadi pupuk yang bermanfaat untuk kesuburan tanah, seperti sisa sayuran, daun, dan kotoran hewan. Metode Takakura adalah teknik fermentasi bahan organik dalam wadah tertutup yang memungkinkan penguraian lebih cepat. Keuntungan dari metode ini adalah mengurangi limbah dan meningkatkan kualitas tanah, tetapi kelemahannya adalah memerlukan pengelolaan yang hati-hati agar proses fermentasi berjalan optimal.",
+            "Pupuk kompos organik adalah pupuk yang dihasilkan dari bahan organik seperti sampah rumah tangga yang difermentasi. Metode Takakura adalah teknik pembuatan pupuk kompos organik yang mengandalkan fermentasi dalam wadah tertutup dengan bahan organik seperti daun dan kotoran hewan. Kelebihan metode ini adalah efisiensi penggunaan limbah rumah tangga, namun kelemahannya adalah memerlukan waktu dan perhatian terhadap kondisi lingkungan dalam wadah fermentasi."
         ]
         
         # Pilih jawaban secara acak agar lebih bervariasi
@@ -48,3 +48,4 @@ if user_input:
     
     # Menampilkan jawaban dalam satu kalimat atau penjelasan singkat
     st.markdown(f"**Jawaban:** {response}")
+
