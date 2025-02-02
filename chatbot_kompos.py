@@ -36,15 +36,21 @@ def google_search(query):
     except KeyError:
         return "Maaf, saya tidak bisa mencari saat ini."
 
-# Header aplikasi
-st.title("Chatbot Pembuatan Pupuk Kompos Organik dengan Metode Takakura")
+# Styling header
+st.markdown("<h1 style='text-align: center; color: #4CAF50;'>Chatbot Pembuatan Pupuk Kompos Organik</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #2c3e50;'>Dengan Metode Takakura</h3>", unsafe_allow_html=True)
+
+# Menambahkan gambar terkait dengan pupuk kompos organik
+st.image("https://www.example.com/images/compost.jpg", caption="Pembuatan Pupuk Kompos Organik", use_column_width=True)
 
 # Input pengguna
-user_input = st.text_input("Tanyakan sesuatu tentang pembuatan pupuk kompos organik dengan metode Takakura:")
+st.markdown("<h4 style='color: #34495e;'>Tanyakan sesuatu tentang pembuatan pupuk kompos organik dengan metode Takakura:</h4>", unsafe_allow_html=True)
+user_input = st.text_input("")
 
+# Memproses input pengguna
 if user_input:
     st.write("🔄 Sedang memproses...")
     response = google_search(user_input)
     
-    # Menampilkan jawaban dalam satu kalimat atau penjelasan singkat
-    st.markdown(f"**Jawaban:** {response}")
+    # Menampilkan jawaban
+    st.markdown(f"<div style='background-color: #f0f0f0; padding: 15px; border-radius: 10px; font-size: 16px; color: #2c3e50;'><b>Jawaban:</b> {response}</div>", unsafe_allow_html=True)
