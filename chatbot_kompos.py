@@ -15,8 +15,10 @@ def google_search(query):
     results = search.get_dict()
     
     try:
-        # Mengambil cuplikan teks dari hasil pencarian
-        return "\n".join([res["snippet"] for res in results["organic_results"][:3]])
+        # Ambil cuplikan teks dan buat jawaban lebih terstruktur dan singkat
+        snippets = [res["snippet"] for res in results["organic_results"][:3]]
+        answer = "\n\n".join(snippets)
+        return answer
     except KeyError:
         return "Maaf, saya tidak bisa mencari saat ini."
 
@@ -29,4 +31,6 @@ user_input = st.text_input("Tanyakan sesuatu tentang pupuk kompos:")
 if user_input:
     st.write("🔄 Sedang memproses...")
     response = google_search(user_input)
-    st.write(response)
+    
+    # Menampilkan jawaban dengan highlight dan struktur yang lebih rapi
+    st.markdown(f"**Jawaban:**\n\n{response}")
