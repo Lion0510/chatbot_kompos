@@ -15,10 +15,23 @@ def google_search(query):
     results = search.get_dict()
     
     try:
-        # Ambil cuplikan teks dan buat jawaban lebih terstruktur dan singkat
-        snippets = [res["snippet"] for res in results["organic_results"][:3]]
-        answer = "\n\n".join(snippets)
-        return answer
+        # Mengambil cuplikan teks yang lebih relevan dari hasil pencarian
+        # Fokus pada jenis-jenis pupuk kompos yang disebutkan dalam cuplikan
+        relevant_snippets = []
+
+        for res in results["organic_results"][:3]:
+            snippet = res.get("snippet", "")
+            if "pupuk kompos" in snippet.lower():
+                relevant_snippets.append(snippet)
+
+        # Jika tidak ada cuplikan relevan, memberikan pesan alternatif
+        if not relevant_snippets:
+            return "Maaf, saya tidak dapat menemukan informasi yang relevan."
+
+        # Merangkum hasil dan memastikan jawabannya lebih jelas dan terstruktur
+        summary = "\n\n".join(relevant_snippets)
+        return summary
+
     except KeyError:
         return "Maaf, saya tidak bisa mencari saat ini."
 
@@ -32,5 +45,5 @@ if user_input:
     st.write("🔄 Sedang memproses...")
     response = google_search(user_input)
     
-    # Menampilkan jawaban dengan highlight dan struktur yang lebih rapi
+    # Menampilkan jawaban dengan format yang lebih rapi
     st.markdown(f"**Jawaban:**\n\n{response}")
