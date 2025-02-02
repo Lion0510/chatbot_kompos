@@ -15,7 +15,8 @@ def google_search(query):
     results = search.get_dict()
     
     try:
-        return "\n".join([res["link"] for res in results["organic_results"][:3]])
+        # Mengambil cuplikan teks dari hasil pencarian
+        return "\n".join([res["snippet"] for res in results["organic_results"][:3]])
     except KeyError:
         return "Maaf, saya tidak bisa mencari saat ini."
 
@@ -26,6 +27,6 @@ st.title("Chatbot Pupuk Kompos Organik")
 user_input = st.text_input("Tanyakan sesuatu tentang pupuk kompos:")
 
 if user_input:
-    st.write("🔍 Mencari di Google...")
+    st.write("🔄 Sedang memproses...")
     response = google_search(user_input)
     st.write(response)
