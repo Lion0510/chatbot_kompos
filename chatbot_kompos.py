@@ -22,12 +22,12 @@ def google_search(query):
             if "pupuk kompos organik" in snippet.lower() and "metode takakura" in snippet.lower():
                 return snippet.split('.')[0] + '.'  # Ambil kalimat pertama yang relevan
         
-        # Jika tidak ada hasil, beri penjelasan lengkap dan terstruktur
+        # Jika tidak ada hasil, beri penjelasan lengkap tentang cara pembuatan pupuk kompos menggunakan metode Takakura
         responses = [
-            "Pupuk kompos organik adalah pupuk yang terbuat dari bahan organik yang telah melalui proses dekomposisi alami. Contohnya adalah daun, sisa makanan, dan kotoran hewan. Metode Takakura adalah salah satu metode pembuatan pupuk kompos dengan cara fermentasi dalam wadah tertutup. Proses ini mempercepat penguraian bahan organik menjadi kompos yang kaya akan mikroorganisme yang bermanfaat.",
-            "Pupuk kompos organik berasal dari bahan-bahan organik yang telah difermentasi menjadi pupuk yang berguna bagi tanah. Metode Takakura adalah cara pembuatan pupuk kompos dengan memanfaatkan bahan organik seperti sampah rumah tangga dan kotoran hewan yang difermentasi dalam wadah tertutup. Kelebihan metode ini adalah pengolahan sampah rumah tangga menjadi pupuk yang berguna, namun membutuhkan perhatian pada kelembaban dan aerasi.",
-            "Pupuk kompos organik terdiri dari bahan-bahan alami yang telah terdekomposisi menjadi pupuk yang bermanfaat untuk kesuburan tanah, seperti sisa sayuran, daun, dan kotoran hewan. Metode Takakura adalah teknik fermentasi bahan organik dalam wadah tertutup yang memungkinkan penguraian lebih cepat. Keuntungan dari metode ini adalah mengurangi limbah dan meningkatkan kualitas tanah, tetapi kelemahannya adalah memerlukan pengelolaan yang hati-hati agar proses fermentasi berjalan optimal.",
-            "Pupuk kompos organik adalah pupuk yang dihasilkan dari bahan organik seperti sampah rumah tangga yang difermentasi. Metode Takakura adalah teknik pembuatan pupuk kompos organik yang mengandalkan fermentasi dalam wadah tertutup dengan bahan organik seperti daun dan kotoran hewan. Kelebihan metode ini adalah efisiensi penggunaan limbah rumah tangga, namun kelemahannya adalah memerlukan waktu dan perhatian terhadap kondisi lingkungan dalam wadah fermentasi."
+            "Pembuatan pupuk kompos organik menggunakan metode Takakura dimulai dengan pengumpulan bahan organik seperti daun, sampah rumah tangga, dan kotoran hewan. Bahan tersebut kemudian dimasukkan ke dalam wadah tertutup dan dibiarkan untuk difermentasi selama beberapa minggu. Proses fermentasi ini akan menghasilkan pupuk yang kaya mikroorganisme yang bermanfaat untuk tanah.",
+            "Untuk membuat pupuk kompos organik dengan metode Takakura, pertama-tama kumpulkan bahan-bahan organik seperti daun kering, sisa makanan, dan kotoran hewan. Bahan-bahan ini dicampur dalam wadah tertutup yang memungkinkan fermentasi berlangsung dengan baik. Setelah beberapa minggu, bahan tersebut akan terurai menjadi pupuk yang kaya akan mikroorganisme, siap digunakan untuk meningkatkan kesuburan tanah.",
+            "Metode Takakura dalam pembuatan pupuk kompos organik dimulai dengan pengumpulan bahan organik seperti sampah rumah tangga, daun kering, dan sisa sayuran. Bahan-bahan ini kemudian disusun dalam lapisan-lapisan di dalam wadah tertutup yang menjaga kelembaban dan suhu yang stabil. Setelah beberapa minggu, bahan-bahan tersebut akan terurai dan berubah menjadi kompos yang berguna.",
+            "Proses pembuatan pupuk kompos organik dengan metode Takakura melibatkan fermentasi bahan-bahan organik seperti daun, sampah dapur, dan kotoran hewan dalam wadah tertutup. Bahan-bahan tersebut dicampur secara merata dan dibiarkan selama beberapa minggu untuk mengalami proses penguraian alami. Pupuk yang dihasilkan sangat bermanfaat untuk kesuburan tanah dan meningkatkan kesehatan tanaman."
         ]
         
         # Pilih jawaban secara acak agar lebih bervariasi
@@ -48,4 +48,3 @@ if user_input:
     
     # Menampilkan jawaban dalam satu kalimat atau penjelasan singkat
     st.markdown(f"**Jawaban:** {response}")
-
